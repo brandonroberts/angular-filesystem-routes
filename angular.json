@@ -32,7 +32,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "loader": {
+              ".md": "text"
+            },
+            "allowedCommonJsDependencies": ["front-matter"]
           },
           "configurations": {
             "production": {

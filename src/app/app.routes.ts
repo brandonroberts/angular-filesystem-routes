@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
+import { createRoutes } from '@analogjs/router';
 
-export const routes: Routes = [];
+const pages = {
+  '/src/app/pages/about.page.ts': () => import('./pages/about.page'),
+  '/src/app/pages/(home).page.ts': () => import('./pages/(home).page'),
+  '/src/app/pages/hello.md': () => import('./pages/hello.md').then(m => m.default)
+};
+
+export const routes: Routes = createRoutes(pages);
