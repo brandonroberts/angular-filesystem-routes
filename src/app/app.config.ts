@@ -12,6 +12,7 @@ import { PrismHighlighter} from '@analogjs/content/prism-highlighter';
 import { routes } from './app.routes';
 import { provideFileRouter } from '@analogjs/router';
 import 'prismjs/components/prism-typescript';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,6 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideContent(withMarkdownRenderer(), withHighlighter({ useClass: PrismHighlighter})),
     { provide: ContentRenderer, useClass: MarkdownContentRendererService },
-    MarkedSetupService,
+    MarkedSetupService, provideClientHydration(),
   ]
 };

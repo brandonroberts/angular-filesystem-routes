@@ -36,7 +36,15 @@
             "loader": {
               ".md": "text"
             },
-            "allowedCommonJsDependencies": ["front-matter"]
+            "allowedCommonJsDependencies": [
+              "front-matter",
+              "prismjs"
+            ],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -52,7 +60,11 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "define": {
+                "import.meta.env.PROD": "true",
+                "import.meta.env.SSR": "true"
+              }
             },
             "development": {
               "optimization": false,
