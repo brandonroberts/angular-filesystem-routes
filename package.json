@@ -11,8 +11,8 @@
   },
   "private": true,
   "dependencies": {
-    "@analogjs/content": "^1.7.0-beta.4",
-    "@analogjs/router": "^1.7.0-beta.4",
+    "@analogjs/content": "^1.7.0",
+    "@analogjs/router": "^1.7.0",
     "@angular/animations": "^18.1.0",
     "@angular/common": "^18.1.0",
     "@angular/compiler": "^18.1.0",
