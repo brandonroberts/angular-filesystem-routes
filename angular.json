@@ -32,7 +32,12 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "front-matter"
-            ]
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -48,7 +53,10 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "define": {
+                "import.meta.env.DEV": "false"
+              }
             },
             "development": {
               "optimization": false,
